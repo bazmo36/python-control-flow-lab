@@ -204,8 +204,18 @@ fizz_buzz()
 # - Ensure to validate input formats and handle unexpected inputs gracefully.
 
 def determine_season():
+    valid_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
     month = input("Enter the month of the year (Jan - Dec):")
+    
+    if month not in valid_months:
+        print("Invalid month. please enter valid 3 letter month")
+        return
+
     day = int(input( "Enter the day of the month:"))
+    if day < 1 or day > 31:
+        print("Invalid day. please enter number between 1 and 31.")
+        return
 
     if (month == "Dec" and day >= 21) or (month in ["Jan","Feb"]) or (month == "Mar" and day <= 19) :
         season = "Winter"
