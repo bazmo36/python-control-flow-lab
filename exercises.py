@@ -179,6 +179,8 @@ def fizz_buzz():
          print("Buzz")
         elif num %3 == 0:
          print("Fizz")
+        else:
+            print(num)
 
 # Call the function
 fizz_buzz()
